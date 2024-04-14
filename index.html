@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Найди все предметы</title>
+	<style type="text/css">
+		
+		.levelez{
+			background-image: ;
+			display: none;
+			position: absolute;
+		}
+		.levelnorm{
+			display: none;
+			position: absolute;
+		}
+		.levelhard{
+			display: none;
+			position: absolute;
+		}
+		.main{
+			height: 250px;
+			width: 700px;
+			background: skyblue;
+			border-radius: 20px;
+			margin-left: 600px;
+			margin-top: 350px;
+			position: absolute;
+		}
+		.win{
+			height: 200px;
+			width: 400px;
+			background:green;
+			border-radius: 20px;
+			margin-left: 750px;
+			margin-top: 320px;
+			display: none;
+			position: absolute;
+		}
+		.box1ez{
+			background-image: url(6.webp);
+			background-size: cover;
+			height: 60px;
+			width: 35px;
+			position: absolute;
+			top: 387px;
+			left: 1729px;
+		}
+		.box2ez{
+			background-image: url(7.webp);
+			background-size: cover;
+			height: 70px;
+			width: 35px;
+			position: absolute;
+			top: 832px;
+			left: 240px;
+		}
+		.box3ez{
+			background-image: url(8.webp);
+			background-size: cover;
+			height: 65px;
+			width: 35px;
+			position: absolute;
+			top: 573px;
+			left: 1050px;
+		}
+		.box4ez{
+			background-image: url(9.webp);
+			background-size: cover;
+			height: 60px;
+			width: 35px;
+			position: absolute;
+			top: 722px;
+			left: 1300px;
+		}
+		.box5ez{
+			background-image: url(10.webp);
+			background-size: cover;
+			height: 80px;
+			width: 35px;
+			position: absolute;
+			top: 415px;
+			left: 1270px;
+		}
+
+
+/*		normal*/
+
+
+		.box1norm{
+			background-image: url(1.webp);
+			background-size: cover;
+			height: 30px;
+			width: 30px;
+			position: absolute;
+			top: 146px;
+			left: 1365px;
+		}
+		.box2norm{
+			background-image: url(2.webp);
+			background-size: cover;
+			height: 30px;
+			width: 30px;
+			position: absolute;
+			top: 700px;
+			left: 230px;
+		}
+		.box3norm{
+			background-image: url(3.webp);
+			background-size: cover;
+			height: 30px;
+			width: 30px;
+			position: absolute;
+			top: 284px;
+			left: 970px;
+		}
+		.box4norm{
+			background-image: url(4.webp);
+			background-size: cover;
+			height: 30px;
+			width: 30px;
+			position: absolute;
+			top: 752px;
+			left: 1320px;
+		}
+		.box5norm{
+			background-image: url(5.webp);
+			background-size: 100% 100%;
+			height: 25px;
+			width: 25px;
+			position: absolute;
+			top: 400px;
+			left: 500px;
+		}
+
+/*		hard*/
+		.box1hard{
+			background-image: url(1.webp);
+			background-size: cover;
+			height: 30px;
+			width: 30px;
+			position: absolute;
+			top: 441px;
+			left: 289px;
+		}
+		.box2hard{
+			background-image: url(3.webp);
+			background-size: cover;
+			height: 30px;
+			width: 30px;
+			position: absolute;
+			top: 430px;
+			left: 1780px;
+		}
+		.box3hard{
+			background-image: url(9.webp);
+			background-size: 100% 100%;
+			height: 55px;
+			width: 35px;
+			position: absolute;
+			top: 640px;
+			left: 400px;
+		}
+		.box4hard{
+			background-image: url(6.webp);
+			background-size: 100% 100%;
+			height: 55px;
+			width: 35px;
+			position: absolute;
+			top: 317px;
+			left: 600px;
+		}
+		.box5hard{
+			background-image: url(11.webp);
+			background-size: 100% 100%;
+			height: 55px;
+			width: 45px;
+			position: absolute;
+			top: 792px;
+			left: 1450px;
+			opacity: 0.2;
+		}
+		.box6hard{
+			background-image: url(12.webp);
+			background-size: 100% 100%;
+			height: 27px;
+			width: 35px;
+			position: absolute;
+			top: 783px;
+			left: 840px;
+			opacity: 0.1;
+		}
+		.box7hard{
+			background-image: url(13.webp);
+			background-size: 100% 100%;
+			height: 25px;
+			width: 30px;
+			position: absolute;
+			top: 750px;
+			left: 1000px;
+			opacity: 0.6;
+		}
+
+		.panel{
+			background: lightyellow;
+			border-radius: 10px;
+			height: 420px;
+			width: 400px;
+		}
+		.panel2{
+			background: lightyellow;
+			border-radius: 10px;
+			height: 320px;
+			width: 400px;
+		}
+		.panel3{
+			background: lightyellow;
+			border-radius: 10px;
+			height: 350px;
+			width: 400px;
+		}
+		.pd{
+			padding-left: 7px;
+		}
+		.bg{
+			background-image: url(main.jpg);
+			background-size: cover;
+		}
+		.bt{
+			margin-left: 100px;
+			margin-top: 20px;
+			height: 50px;
+			width: 100px;
+			border-radius: 10px;
+			border:none;
+
+		}
+		.btwin{
+			margin-left: 150px;
+			margin-top: 20px;
+			height: 50px;
+			width: 100px;
+			border-radius: 10px;
+			border:none;
+
+		}
+		.btez{
+			background: seagreen;
+		}
+		.btnorm{
+			background: lightyellow;
+		}
+		.bthard{
+			background: darkred;
+		}
+	</style>
+</head>
+<body class="bg">
+
+	<div class="main">
+		<h1 class="pd">Побробуйте найти все спрятанные предметы. Тематика: игра Террария</h1>
+		<h3 class="pd">Выберите сложность</h3>
+		<div style="display: flex;">
+			<button onclick="levelezperehodez()" class="bt btez">Легко</button>
+			<button onclick="levelezperehodnorm()" class="bt btnorm" >Нормально</button>
+			<button onclick="levelezperehodhard()" class="bt bthard">Тяжело</button>
+		</div>
+
+
+	</div>
+	<div class="win">
+		<h1 class="pd">Поздравляю ты победил!</h1>
+			<button onclick="reload()" class="bt norm btwin">Начать снова?</button>
+		</div>
+
+
+	</div>
+
+	 <div class="levelez"><div class="panel2">
+    	<h1 class="pd">Найди всех НИПов</h1>
+    	<div style="display: flex;"> <h1 class=" pd">Очки: <span class="score">0</span></h1></div>
+    	<p class="sniper pd">Медсестра</p>
+    	<p class="sniper pd">Красильщик</p>
+    	<p class="sniper pd">Оружейник</p>
+    	<p class="sniper pd">Механик</p>
+    	<p class="sniper pd">Паромеханик</p>
+
+
+    </div>
+    <div onclick="find1ez()" class="box1ez">
+    	
+    </div>
+    <div onclick="find2ez()" class="box2ez">
+    	
+    </div>
+    <div onclick="find3ez()" class="box3ez">
+    	
+    </div>
+    <div onclick="find4ez()" class="box4ez">
+    	
+    </div>
+    <div onclick="find5ez()" class="box5ez">
+    	
+    </div></div>
+
+   <div class="levelnorm"><div class="panel3">
+    	<h1 class="pd">Найди всех дружелюбных животных</h1>
+    	<div style="display: flex;"> <h1 class="pd">Очки: <span class="score1">0</span></h1></div>
+    	<p class="sniper pd">кролик</p>
+    	<p class="sniper pd">белка</p>
+    	<p class="sniper pd">золотой кролик</p>
+    	<p class="sniper pd">взрывокролик</p>
+    	<p class="sniper pd">призматическая златогласка</p>
+
+
+    </div>
+    <div onclick="find1norm()" class="box1norm">
+    	
+    </div>
+    <div onclick="find2norm()" class="box2norm">
+    	
+    </div>
+    <div onclick="find3norm()" class="box3norm">
+    	
+    </div>
+    <div onclick="find4norm()" class="box4norm">
+    	
+    </div>
+    <div onclick="find5norm()" class="box5norm">
+    	
+    </div></div>
+    <div class="levelhard"><div class="panel">
+    	<h1 class="pd">Найди все спрятанные предметы</h1>
+    	<div style="display: flex;"> <h1 class="pd">Очки: <span class="score2">0</span></h1></div>
+    	<p class="sniper pd">кролик</p>
+    	<p class="sniper pd">золотой кролик</p>
+    	<p class="sniper pd">механик</p>
+    	<p class="sniper pd">медсестра</p>
+    	<p class="sniper pd">шаман</p>
+    	<p class="sniper pd">сундук</p>
+    	<p class="sniper pd">золотая рыбка</p>
+
+
+    </div>
+    <div onclick="find1hard()" class="box1hard">
+    	
+    </div>
+    <div onclick="find2hard()" class="box2hard">
+    	
+    </div>
+    <div onclick="find3hard()" class="box3hard">
+    	
+    </div>
+    <div onclick="find4hard()" class="box4hard">
+    	
+    </div>
+    <div onclick="find5hard()" class="box5hard">
+    	
+    </div>
+    <div onclick="find6hard()" class="box6hard">
+    	
+    </div>
+    <div onclick="find7hard()" class="box7hard">
+    	
+    </div>
+
+</div>
+   
+<script type="text/javascript">
+	let bg = document.querySelector(".bg")
+     let main = document.querySelector(".main")
+     let levelez = document.querySelector(".levelez")
+     let levelnorm = document.querySelector(".levelnorm")
+     let levelhard = document.querySelector(".levelhard")
+     let win = document.querySelector(".win")
+     let sniper = document.querySelectorAll(".sniper")
+     let number = 0;
+
+     let score = document.querySelector(".score")
+     let score1 = document.querySelector(".score1")
+     let score2 = document.querySelector(".score2")
+
+     let box1ez = document.querySelector(".box1ez")
+     let box2ez = document.querySelector(".box2ez")
+     let box3ez = document.querySelector(".box3ez")
+     let box4ez = document.querySelector(".box4ez")
+     let box5ez = document.querySelector(".box5ez")
+
+     // normal
+
+     let box1norm = document.querySelector(".box1norm")
+     let box2norm = document.querySelector(".box2norm")
+     let box3norm = document.querySelector(".box3norm")
+     let box4norm = document.querySelector(".box4norm")
+     let box5norm = document.querySelector(".box5norm")
+
+     // hard
+
+
+     let box1hard = document.querySelector(".box1hard")
+     let box2hard = document.querySelector(".box2hard")
+     let box3hard = document.querySelector(".box3hard")
+     let box4hard = document.querySelector(".box4hard")
+     let box5hard = document.querySelector(".box5hard")
+     let box6hard = document.querySelector(".box6hard")
+     let box7hard = document.querySelector(".box7hard")
+
+	
+     function levelezperehodez(){
+     	main.style.display = "none"
+     	levelez.style.display = "block"
+     	bg.style.backgroundImage = "url(2.jpg)"
+     }
+     function levelezperehodnorm(){
+     	main.style.display = "none"
+     	levelnorm.style.display = "block"
+     	bg.style.backgroundImage = "url(1.jpg)"
+     }
+     function levelezperehodhard(){
+     	main.style.display = "none"
+     	levelhard.style.display = "block"
+     	bg.style.backgroundImage = "url(6.jpg)"
+     }
+     function reload(){
+		location.reload()
+	}
+
+
+     function find1ez() {
+     	number = number + 1
+     	score.innerHTML = number
+     	box1ez.style.display = "none"
+     	sniper[0].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelez.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find2ez() {
+     	number = number + 1
+     	score.innerHTML = number
+     	box2ez.style.display = "none"
+     	sniper[1].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelez.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find3ez() {
+     	number = number + 1
+     	score.innerHTML = number
+     	box3ez.style.display = "none"
+     	sniper[2].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelez.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find4ez() {
+     	number = number + 1
+     	score.innerHTML = number
+     	box4ez.style.display = "none"
+     	sniper[3].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelez.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find5ez() {
+     	number = number + 1
+     	score.innerHTML = number
+     	box5ez.style.display = "none"
+     	sniper[4].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelez.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+
+
+     // normal
+
+     function find1norm() {
+     	number = number + 1
+     	score1.innerHTML = number
+     	box1norm.style.display = "none"
+     	sniper[5].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelnorm.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find2norm() {
+     	number = number + 1
+     	score1.innerHTML = number
+     	box2norm.style.display = "none"
+     	sniper[6].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelnorm.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find3norm() {
+     	number = number + 1
+     	score1.innerHTML = number
+     	box3norm.style.display = "none"
+     	sniper[7].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelnorm.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find4norm() {
+     	number = number + 1
+     	score1.innerHTML = number
+     	box4norm.style.display = "none"
+     	sniper[8].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelnorm.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find5norm() {
+     	number = number + 1
+     	score1.innerHTML = number
+     	box5norm.style.display = "none"
+     	sniper[9].style.textDecoration = "line-through"
+     	if (number >= 5){
+     		levelnorm.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+
+     // hard
+
+     function find1hard() {
+     	number = number + 1
+     	score2.innerHTML = number
+     	box1hard.style.display = "none"
+     	sniper[10].style.textDecoration = "line-through"
+     	if (number >= 7){
+     		levelhard.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find2hard() {
+     	number = number + 1
+     	score2.innerHTML = number
+     	box2hard.style.display = "none"
+     	sniper[11].style.textDecoration = "line-through"
+     	if (number >= 7){
+     		levelhard.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find3hard() {
+     	number = number + 1
+     	score2.innerHTML = number
+     	box3hard.style.display = "none"
+     	sniper[12].style.textDecoration = "line-through"
+     	if (number >= 7){
+     		levelhard.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find4hard() {
+     	number = number + 1
+     	score2.innerHTML = number
+     	box4hard.style.display = "none"
+     	sniper[13].style.textDecoration = "line-through"
+     	if (number >= 7){
+     		levelhard.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find5hard() {
+     	number = number + 1
+     	score2.innerHTML = number
+     	box5hard.style.display = "none"
+     	sniper[14].style.textDecoration = "line-through"
+     	if (number >= 7){
+     		levelhard.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find6hard() {
+     	number = number + 1
+     	score2.innerHTML = number
+     	box6hard.style.display = "none"
+     	sniper[15].style.textDecoration = "line-through"
+     	if (number >= 7){
+     		levelhard.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+     function find7hard() {
+     	number = number + 1
+     	score2.innerHTML = number
+     	box7hard.style.display = "none"
+     	sniper[16].style.textDecoration = "line-through"
+     	if (number >= 7){
+     		levelhard.style.display = "none"
+     		win.style.display = "block"
+     	}
+     }
+
+</script>
+</body>
+</html>
